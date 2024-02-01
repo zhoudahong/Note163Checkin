@@ -1,8 +1,11 @@
 name: Run
 
 on:
-  workflow_dispatch:
-  repository_dispatch:
+    workflow_dispatch:
+    schedule:
+        - cron: "*/20 16 * * *"
+    watch:
+        types: [started]
 
 jobs:
   build:
